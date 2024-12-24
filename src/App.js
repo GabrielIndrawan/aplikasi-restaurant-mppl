@@ -1,15 +1,23 @@
-import './App.css';
-import Footer from './components/footer';
-import Header from './components/header';
-import PemesananLayout from './layouts/pemesananlayouts';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import PemesananPage from './pages/pemesananpage';
+import DetailPemesananPage from './pages/detailpemesananpage';
 
 function App() {
+  const routes = createBrowserRouter(
+    [
+      {
+        path: "/pesan",
+        element: <PemesananPage/>
+      },
+      {
+        path: "/pesan/detail",
+        element: <DetailPemesananPage/>
+      },
+    ]
+  )
+
   return(
-    <>
-      <Header title="SUKAJAYA" secondaryTitle="Semarang" color="bg-amber-700"/>
-      <PemesananLayout/>
-      <Footer desc="Total : 0"/>
-    </>
+    <RouterProvider router={routes}/>
   )
 }
 

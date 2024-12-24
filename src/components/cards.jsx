@@ -6,18 +6,20 @@ const Card = (props) => {
                 <div className="bg-gray-300 h-3/5">
                     
                 </div>
-                <div className="mt-2 text-white text-lg">
+                <div className="mt-2 text-white text-lg select-none">
                     {item.name}
                 </div>
-                <div className="mt-2 text-white text-lg">
-                    ${item.price}
+                <div className="mt-2 text-white text-lg select-none flex flex-row">
+                    $
+                    <div className="w-1"/>
+                    {item.price}
                 </div>
                 <div className="flex flex-row">
-                    <div className="mt-2 text-white text-lg">
+                    <div className="mt-2 text-white text-lg select-none">
                         {item.desc}
                     </div>
-                    <button className="bg-white ml-auto w-14 h-14 text-3xl font-bold rounded-full">
-                        <div className="justify-self-center align-middle">
+                    <button className="bg-white ml-auto w-14 h-14 text-4xl font-bold rounded-full align-bottom mt-4">
+                        <div className="justify-center align-middle mb-3 text-5xl select-none">
                             +
                         </div>
                     </button>

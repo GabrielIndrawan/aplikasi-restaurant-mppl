@@ -1,6 +1,36 @@
+import { useState } from "react";
 import Card from "../components/cards";
 
 const PemesananLayout = () => {
+    const [category, setCategory] = useState("")
+
+    const menus = [
+        {name: "Ayam Bakar",pic: "",price: 10,desc: "Ayam Bakar Nusantara",category: "Nusantara"},
+        {name: "Kopi Hitam",pic: "",price: 2,desc: "Kopi Hitam Nusantara",category: "Kopi"},
+        {name: "Susu Coklat",pic: "",price: 2,desc: "Susu Coklat manies",category: "Non Kopi"},
+        {name: "Spaghetti",pic: "",price: 2,desc: "Susu Coklat manies",category: "Western"},
+        {name: "Ayam Bakar",pic: "",price: 10,desc: "Ayam Bakar Nusantara",category: "Nusantara"},
+        {name: "Kopi Hitam",pic: "",price: 2,desc: "Kopi Hitam Nusantara",category: "Kopi"},
+        {name: "Susu Coklat",pic: "",price: 2,desc: "Susu Coklat manies",category: "Non Kopi"},
+        {name: "Spaghetti",pic: "",price: 2,desc: "Susu Coklat manies",category: "Western"},
+    ]
+
+    const generateMenus = () => {
+        return menus.map(
+            (menu,index)=>{
+                if(index===0){
+                    return (
+                        <div className="mt-6 ml-4">
+                            <Card item={menu}/>
+                        </div>
+                    );
+                }else{
+                    return <Card item={menu}/>;
+                }
+            }
+        )
+    }
+
     return(
         <>
             <div className="mt-0 bg-red-200 pt-2 pr-3 pb-4">
@@ -25,20 +55,11 @@ const PemesananLayout = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-4 space-x-4 w-auto space-y-6">
-                    <div className="mt-6 ml-4">
-                        <Card item={{name: "Menu 1", desc: "Desc"}}/>
-                    </div>
-                    <Card item={{name: "Menu 2", desc: "Desc"}}/>
-                    <Card item={{name: "Menu 3", desc: "Desc"}}/>
-                    <Card item={{name: "Menu 4", desc: "Desc"}}/>
-                    <Card item={{name: "Menu 5", desc: "Desc"}}/>
-                    <Card item={{name: "Menu 6", desc: "Desc"}}/>
-                    <Card item={{name: "Menu 7", desc: "Desc"}}/>
-                    <Card item={{name: "Menu 8", desc: "Desc"}}/>
+                    {generateMenus()}
                 </div>
-            </div>
-            <div className="bg-amber-700 ">
-
+                <div className="justify-self-center text-amber-700 text-lg font-bold mt-12 mb-7">
+                    harga belum termasuk PPN 11% dan Service 5%
+                </div>
             </div>
         </>    
     )
