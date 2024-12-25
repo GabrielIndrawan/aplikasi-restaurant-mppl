@@ -1,11 +1,15 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GreyBar from "../components/greybar";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigation } from "../functions/navigateto";
 
 const DetailPemesananLayout = () => {
+    const {navigateTo} = useNavigation()
     return(
         <>
             <div className="mt-0 bg-red-200 pt-2 pr-3 pb-4">
-                <div className="text-lg  ml-4 justify-self-start font-bold mb-2 mt-5 text-amber-700">
-                    Kategori
+                <div onClick={()=>{navigateTo("/pesan/")}} className="text-lg  ml-4 justify-self-start font-bold mb-2 mt-5 bg-amber-700 text-white rounded-full">
+                    <FontAwesomeIcon icon={faArrowLeft} className="mt-1 mx-4"/>
                 </div>
                 <form>
                     <GreyBar formation="flex flex-row py-4">

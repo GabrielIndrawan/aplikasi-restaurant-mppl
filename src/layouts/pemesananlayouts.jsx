@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Card from "../components/cards";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useNavigation } from "../functions/navigateto";
 
 const PemesananLayout = () => {
     const [category, setCategory] = useState("")
+    const {navigateTo} = useNavigation()
 
     const menus = [
         {name: "Ayam Bakar",pic: "",price: 10,desc: "Ayam Bakar Nusantara",category: "Nusantara"},
@@ -51,7 +55,7 @@ const PemesananLayout = () => {
                         <button className="bg-amber-700 text-white py-1 px-3 rounded-full text-sm font-bold">NON KOPI</button>
                     </div>
                     <div className="ml-auto ">
-                        <button className="bg-amber-700 ml-auto">Test</button>
+                        <FontAwesomeIcon onClick={()=>{navigateTo("/pesan/detail")}} icon={faCartShopping} className="text-amber-700 ml-auto text-xl"/>
                     </div>
                 </div>
                 <div className="grid grid-cols-4 space-x-4 w-auto space-y-6">

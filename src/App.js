@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PemesananPage from './pages/pemesananpage';
 import DetailPemesananPage from './pages/detailpemesananpage';
+import DaftarPesananPage from './pages/daftarpesananpage';
+import KelolaMenuPage from './pages/kelolamenupage';
 
 function App() {
   const routes = createBrowserRouter(
@@ -12,6 +14,14 @@ function App() {
       {
         path: "/pesan/detail",
         element: <DetailPemesananPage/>
+      },
+      {
+        path: "/dapur/pesan",
+        element: <DaftarPesananPage/>
+      },
+      {
+        path: "/dapur/menu",
+        element: <KelolaMenuPage/>
       },
     ]
   )
