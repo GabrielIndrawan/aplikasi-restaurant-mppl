@@ -1,5 +1,5 @@
 const Card = (props) => {
-    const {item} = props
+    const {item, click} = props
     return(
         <>
             <div className="bg-amber-700 p-5 rounded-2xl h-[400px]">
@@ -10,7 +10,7 @@ const Card = (props) => {
                     {item.name}
                 </div>
                 <div className="mt-2 text-white text-lg select-none flex flex-row">
-                    $
+                    Rp
                     <div className="w-1"/>
                     {item.price}
                 </div>
@@ -19,7 +19,7 @@ const Card = (props) => {
                         {item.desc}
                     </div>
                     <button className="bg-white ml-auto w-14 h-14 text-4xl font-bold rounded-full align-bottom mt-4">
-                        <div className="justify-center align-middle mb-3 text-5xl select-none">
+                        <div className="justify-center align-middle mb-3 text-5xl select-none font-sans" onClick={click}>
                             +
                         </div>
                     </button>

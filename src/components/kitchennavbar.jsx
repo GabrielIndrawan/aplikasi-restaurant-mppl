@@ -16,10 +16,10 @@ const KitchenNavBar = () => {
                 </div>
             </div>
             <div className="bg-red-200 mb-5 mx-3 rounded-xl justify-items-center">
-                <button className="text-amber-700 py-4 font-bold w-full" onClick={()=>{navigateTo("/dapur/pesan")}}>DAFTAR PESANAN</button>
+                <button className="text-amber-700 py-4 w-full" onClick={()=>{navigateTo("/dapur/pesan")}}>DAFTAR PESANAN</button>
             </div>
             <div className="bg-red-200 mb-5 mx-3 rounded-xl">
-                <button className="text-amber-700 py-4 font-bold w-full" onClick={()=>{navigateTo("/dapur/menu")}}>KELOLA MENU</button>
+                <button className="text-amber-700 py-4 w-full" onClick={()=>{navigateTo("/dapur/menu")}}>KELOLA MENU</button>
             </div>
         </div>
     )

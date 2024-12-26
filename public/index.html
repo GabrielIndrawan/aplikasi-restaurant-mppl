@@ -10,6 +10,29 @@
       content="Web site created using create-react-app"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              hardigan: ['hardigan', 'sans-serif'],
+            },
+          },
+        },
+      };
+  
+      // Inject @font-face rule
+      const style = document.createElement("style");
+      style.innerHTML = `
+        @font-face {
+          font-family: 'hardigan';
+          src: url('/font/hardigan.otf') format('opentype');
+          font-weight: normal;
+          font-style: normal;
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a

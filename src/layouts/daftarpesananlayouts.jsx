@@ -1,5 +1,20 @@
 
 const DaftarPesananLayout = () => {
+    fetch()
+
+    const generateTable = () => {
+        <tbody>
+            <tr>
+                <td className="border border-gray-300 px-4 py-2 bg-gray-100 text-left">*order id</td>
+                <td className="border border-gray-300 px-4 py-2 bg-gray-100 text-left">*no meja</td>
+                <td className="border border-gray-300 px-4 py-2 bg-gray-100 text-left">*nama pelanggan</td>
+                <td className="border border-gray-300 px-4 py-2 bg-gray-100 text-left">*detail pesanan</td>
+                <td className="border border-gray-300 px-4 py-2 bg-gray-100 text-left">*total</td>
+                <td className="border border-gray-300 px-4 py-2 bg-gray-100 text-left">*status</td>
+            </tr>
+        </tbody>
+    }
+
     return(
         <div className="bg-red-200 w-4/5">
             <div className="font-bold text-amber-700 text-2xl ml-7 mt-10 mb-4">
@@ -17,6 +32,7 @@ const DaftarPesananLayout = () => {
                             <th className="border border-gray-300 px-4 py-2 bg-gray-100 text-left">STATUS</th>
                         </tr>
                     </thead>
+                    {generateTable()}
                 </table>
             </div>
         </div>
