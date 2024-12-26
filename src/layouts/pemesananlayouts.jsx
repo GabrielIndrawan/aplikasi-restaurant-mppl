@@ -36,6 +36,7 @@ const PemesananLayout = () => {
                         updateQuantity(menu.name, (menu.jumlah||0) + 1);
                         console.log(menu)
                     }}
+                    image={menu.pic}
                 />
             </div>
         ));
