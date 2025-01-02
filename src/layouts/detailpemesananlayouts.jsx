@@ -27,7 +27,6 @@ const DetailPemesananLayout = () => {
     };
     const { totalPrice, totalQuantity } = calculateSummary();
     const generatePesanan = () => {
-        console.log(pemesanan)
         return pemesanan.map(
             (pesan)=>{
                 return (pesan.jumlah!==0)?
@@ -134,7 +133,20 @@ const DetailPemesananLayout = () => {
                         </div>
                     </GreyBar>
                     <div className="mt-5 bg-amber-700 ml-4 text-white text-lg rounded-xl">
-                        <button type="submit" className="w-full h-full py-5" onClick={setPemesanan(defaultValue)}>KONFIRMASI PESANAN</button>
+                        <button type="submit" className="w-full h-full py-5" onClick={
+                            ()=>{
+                                console.log(JSON.stringify(pemesanan))
+                                fetch("http://localhost:5000/insert/",
+                                    {
+                                        method: "POST",
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify(pemesanan)
+                                    }
+                                )
+                            }
+                        }>KONFIRMASI PESANAN</button>
                     </div>
                 </form>
             </div>

@@ -1,10 +1,10 @@
 const Card = (props) => {
-    const {item, click, image} = props
+    const {item, click, image, imageVariant,} = props
     return(
         <>
             <div className="bg-amber-700 p-5 rounded-2xl h-[400px]">
                 <div className="bg-gray-300 h-3/5">
-                    <img src={image} className="h-full"/>
+                    <img src={image} className={`h-full ${imageVariant}`}/>
                 </div>
                 <div className="mt-2 text-white text-lg select-none">
                     {item.name}

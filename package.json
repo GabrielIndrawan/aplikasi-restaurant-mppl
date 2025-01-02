@@ -6,17 +6,34 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "cors": "^2.8.5",
     "cra-template": "1.2.0",
+    "crypto-browserify": "^3.12.1",
+    "epress": "^0.0.1-security",
+    "express": "^4.21.2",
+    "fabric": "^5.5.1",
     "framer-motion": "^11.15.0",
     "jotai": "^2.11.0",
+    "mysql2": "^3.12.0",
+    "path-browserify": "^1.0.1",
+    "querystring-es3": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "tailwindcss": "^3.4.16",
+    "url": "^0.11.4",
+    "util": "^0.12.5",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
+    "client": "npm run start",
+    "server": "node src/server.js",
+    "mulai": "npm-run-all --parallel client server",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +56,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

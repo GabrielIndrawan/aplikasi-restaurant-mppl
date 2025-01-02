@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +8,7 @@ import { pesanan } from "../state/statepemesanan";
 
 const PemesananLayout = () => {
     const [category, setCategory] = useState("")
+    const [status, setStatus] = useState([{status:""},{status:""}])
     const [pemesanan,setPemesanan] = useAtom(pesanan)
     const {navigateTo} = useNavigation()
 
@@ -25,22 +26,38 @@ const PemesananLayout = () => {
                 ? pemesanan.filter((menu) => menu.category === categories)
                 : pemesanan;
 
-        return filteredMenus.map((menu, index) => (
+        return filteredMenus.map((menu, index) =>{
+            const menuStatus = status[index]?.status
+            return(
             <div
                 className={`mt-6 ${index === 0 ? "ml-4" : ""}`}
                 key={menu.name}
             >
                 <Card
+                    imageVariant={(menuStatus===0)? "grayscale":""}
                     item={menu}
                     click={() => {
-                        updateQuantity(menu.name, (menu.jumlah||0) + 1);
-                        console.log(menu)
+                        if(menuStatus!==0){
+                            updateQuantity(menu.name, (menu.jumlah||0) + 1)
+                        }
                     }}
                     image={menu.pic}
                 />
-            </div>
-        ));
+            </div>)}
+        );
     };
+
+    const getStatus = () => {
+        fetch("http://localhost:5000/fetchStatus").then(
+            (result)=>{result.json().then(
+                (data)=>{setStatus(data)}
+            )}
+        )
+    }
+
+    useEffect(()=>{
+        getStatus()
+    },[])
 
     return(
         <div className="font-hardigan">
